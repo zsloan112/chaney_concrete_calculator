@@ -9,7 +9,7 @@ trigger:
 jobs:
   - job: Android
     pool:
-      vmImage: 'windows-latest'
+      vmImage: 'TestPool'
     steps:
     - task: FlutterInstall@0
       inputs:
