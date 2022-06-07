@@ -6,6 +6,10 @@
 trigger:
 - master
 
+jobs:
+  - job: Android
+  pool:
+    vmImage: 'windows-latest'
 
 - task: FlutterInstall@0
   inputs:
