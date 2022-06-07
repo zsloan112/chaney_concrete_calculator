@@ -17,4 +17,4 @@ pool:
 - task: FlutterBuild@0
   inputs:
     target: 'apk'
-    projectDirectory: '$(projectDirectory)'
+    projectDirectory: '.'
