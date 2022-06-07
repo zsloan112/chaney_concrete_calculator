@@ -6,8 +6,6 @@
 trigger:
 - master
 
-pool:
-  vmImage: windows-latest
 
 - task: FlutterInstall@0
   inputs:
