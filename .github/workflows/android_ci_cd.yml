@@ -28,7 +28,5 @@ jobs:
       - name: Install Flutter dependencies
         run: flutter pub get
         # Add build runner commands here if you have any
-      - name: Run the tests
-        run: flutter test
       - name: Build App Bundle
         run: flutter build appbundle
