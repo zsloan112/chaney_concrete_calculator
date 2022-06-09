@@ -8,11 +8,15 @@ on:
       - "development"
 
 jobs:
+  # CI
   build_android:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
-      uses: actions/checkout@v2
+        uses: actions/checkout@v2
+      - name: Get run number
+        run: |
+          echo ${{ github.run_number }}
       - name: Setup Java
         uses: actions/setup-java@v1
         with:
@@ -20,7 +24,7 @@ jobs:
       - name: Setup Flutter
         uses: subosito/flutter-action@v1
         with:
-          channel: "stable" 
+          channel: "stable"
       - name: Install Flutter dependencies
         run: flutter pub get
         # Add build runner commands here if you have any
