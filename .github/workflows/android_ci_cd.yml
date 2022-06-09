@@ -1,0 +1,30 @@
+name: Android CI/CD
+
+on:
+  push:
+    branches:
+      - "master"
+    pull_requests:
+      - "development"
+
+jobs:
+  build_android:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+      uses: actions/checkout@v2
+      - name: Setup Java
+        uses: actions/setup-java@v1
+        with:
+          java-version: 12.x
+      - name: Setup Flutter
+        uses: subosito/flutter-action@v1
+        with:
+          channel: "stable" 
+      - name: Install Flutter dependencies
+        run: flutter pub get
+        # Add build runner commands here if you have any
+      - name: Run the tests
+        run: flutter test
+      - name: Build App Bundle
+        run: flutter build appbundle
